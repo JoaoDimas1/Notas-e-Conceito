@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale (LC_ALL, "portuguese"); // Configura a localização para exibir mensagens em português
+    float n1, n2, n3, r; // Declara as variáveis para as três notas e a média
+    int i, s; // Declara as variáveis para o contador e para armazenar a soma
+
+    for (i = 0; i <= 10; i++) { // Loop que permite avaliar as notas de múltiplos alunos (executa 11 vezes)
+        printf ("Digite sua primeira nota:\n"); // Solicita a primeira nota ao usuário
+        scanf ("%f", &n1); // Lê a primeira nota fornecida pelo usuário
+
+        printf ("Digite sua segunda nota:\n"); // Solicita a segunda nota ao usuário
+        scanf ("%f", &n2); // Lê a segunda nota fornecida pelo usuário
+
+        printf ("Digite sua terceira nota:\n"); // Solicita a terceira nota ao usuário
+        scanf ("%f", &n3); // Lê a terceira nota fornecida pelo usuário
+
+        r = (n1 + n2 + n3) / 3; // Calcula a média das três notas
+
+        // Verifica o conceito com base na média calculada
+        if (r >= 9) {
+            printf ("Sua nota foi:%2.f e você recebeu conceito A\n", r); // Se a média for maior ou igual a 9
+        } 
+        else if (r >= 7 && r < 9) {
+            printf ("Sua nota foi:%2.f e você recebeu conceito B\n", r); // Se a média for maior ou igual a 7 e menor que 9
+        }
+        else if (r >= 6 && r < 7) {
+            printf ("Sua nota foi:%2.f e você recebeu conceito C\n", r); // Se a média for maior ou igual a 6 e menor que 7
+        }
+        else if (r >= 4 && r < 6) {
+            printf ("Sua nota foi:%2.f e você recebeu conceito D\n", r); // Se a média for maior ou igual a 4 e menor que 6
+        }
+        else {
+            printf ("Sua nota foi:%2.f e você recebeu conceito E\n", r); // Se a média for menor que 4
+        }
+    } 
+
+    return 0; // Retorna 0 para indicar que o programa foi executado com sucesso
+}
